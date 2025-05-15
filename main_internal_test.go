@@ -14,20 +14,20 @@ func TestAnnuaire(t *testing.T) {
 
 	tests := []step{
 		{
-			name: "Ajouter Alice",
+			name: "Ajouter",
 			action: func(a *Annuaire) (any, error) {
 				return nil, a.ajouter("Alice Dupont", "0123456789")
 			},
 		},
 		{
-			name: "Ajouter doublon Alice",
+			name: "Ajouter doublon",
 			action: func(a *Annuaire) (any, error) {
 				return nil, a.ajouter("Alice Dupont", "0987654321")
 			},
 			expectErr: true,
 		},
 		{
-			name: "Modifier Alice",
+			name: "Modifier",
 			action: func(a *Annuaire) (any, error) {
 				return nil, a.modifier("Alice Dupont", "0000000000")
 			},
